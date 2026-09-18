@@ -81,7 +81,7 @@ export function CurtainReveal({ title, before, after, index }: Props) {
           aria-hidden
           className={cn(
             panelBase,
-            "inset-x-0 bottom-0 h-1/2 w-full delay-100 sm:inset-y-0 sm:right-0 sm:h-full sm:w-1/2",
+            "inset-x-0 bottom-0 h-1/2 w-full delay-100 sm:inset-y-0 sm:left-auto sm:right-0 sm:h-full sm:w-1/2",
             open &&
               "translate-y-full sm:translate-y-0 sm:translate-x-full motion-reduce:translate-x-0 motion-reduce:translate-y-0 motion-reduce:opacity-0",
           )}
