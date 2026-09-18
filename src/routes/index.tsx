@@ -49,7 +49,7 @@ function Index() {
   return (
     <main className="overflow-x-hidden bg-background text-foreground">
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen px-5 pt-7 pb-16 md:px-10 md:pt-9">
+      <section className="relative px-5 pt-7 pb-20 md:px-10 md:pt-9 md:pb-28">
         <div className="eyebrow flex items-center justify-between">
           <span>Fit-Out · Interior Design · Dubai</span>
           <span>Est. 2014</span>
