@@ -9,6 +9,7 @@ export function useInView<T extends HTMLElement>(options?: IntersectionObserverI
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
+        if (!entry) return;
         if (entry.isIntersecting) {
           setInView(true);
           if (once) io.disconnect();
