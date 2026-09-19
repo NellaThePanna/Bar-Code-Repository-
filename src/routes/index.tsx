@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { CurtainReveal } from "@/components/CurtainReveal";
+import { FounderIntro } from "@/components/FounderIntro";
+import { RoomAssembly } from "@/components/RoomAssembly";
 
 import heroLiving from "@/assets/hero-living.jpg";
 import storyKitchen from "@/assets/story-kitchen.jpg";
@@ -48,6 +50,8 @@ const steps = [
 function Index() {
   return (
     <main className="overflow-x-hidden bg-background text-foreground">
+      <FounderIntro />
+
       {/* ─── HERO ─── */}
       <section className="relative px-5 pt-7 pb-20 md:px-10 md:pt-9 md:pb-28">
         <div className="eyebrow flex items-center justify-between">
@@ -128,6 +132,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <RoomAssembly />
 
       {/* ─── BEFORE / AFTER CURTAIN REVEAL ─── */}
       <section className="bg-burgundy px-5 py-24 text-cream md:px-10 md:py-36">
