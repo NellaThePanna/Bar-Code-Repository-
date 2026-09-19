@@ -46,7 +46,26 @@
   --color-burgundy: var(--burgundy);
   --font-display: "Playfair Display", "Times New Roman", serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-founder: "Bodoni Moda", "Times New Roman", serif;
+  --font-founder-body: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Pinyon Script", cursive;
   --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@utility font-founder {
+  font-family: var(--font-founder);
+}
+
+@utility font-founder-body {
+  font-family: var(--font-founder-body);
+}
+
+@utility font-script {
+  font-family: var(--font-script);
+}
+
+@utility photo-grade {
+  filter: saturate(0.82) contrast(0.96) sepia(0.08);
 }
 
 /* Brand palette — exact values requested: cream #FEEFDC, burgundy #63343C */
@@ -181,5 +200,41 @@
   @media (prefers-reduced-motion: reduce) {
     transition: opacity 400ms ease;
     transform: none;
+  }
+}
+
+@keyframes room-piece-arrive {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.72);
+  }
+  66% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.07);
+  }
+  82% {
+    transform: translateY(2px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@utility assembly-piece {
+  opacity: 0;
+  transform-origin: 50% 85%;
+  will-change: transform, opacity;
+
+  &.is-assembled {
+    animation: room-piece-arrive 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &.is-assembled {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 }
