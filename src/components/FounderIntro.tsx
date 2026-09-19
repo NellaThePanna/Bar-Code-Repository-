@@ -50,11 +50,11 @@ export function FounderIntro() {
         <div className="relative z-10 order-2 md:order-1 md:col-span-7 md:pr-8 lg:col-span-6">
           <div className="mb-8 h-px w-16 bg-burgundy" aria-hidden />
           <p className="eyebrow">A note from our founder</p>
-          <h2 className="font-founder mt-8 max-w-3xl text-[clamp(2.8rem,6.3vw,6.5rem)] leading-[0.98] font-medium">
+          <h2 className="font-founder mt-8 max-w-3xl text-[2.45rem] leading-[0.98] font-medium sm:text-5xl md:text-[clamp(3.5rem,6.3vw,6.5rem)]">
             Hi, I&rsquo;m Arpita Kaur.
             <br />
             <span className="font-script mr-2 text-[1.22em] font-normal">Welcome</span>
-            <span className="whitespace-nowrap">to Bar Code Living.</span>
+            <span>to Bar Code Living.</span>
           </h2>
           <p className="font-founder-body mt-9 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             I founded Bar Code Living to make the journey from an empty space to a deeply personal home
@@ -73,7 +73,7 @@ export function FounderIntro() {
             fetchPriority="high"
             className="photo-grade absolute -inset-y-[10%] left-0 h-[120%] w-full object-cover will-change-transform"
           />
-          <span className="eyebrow absolute right-4 bottom-4 bg-background px-2.5 py-1 text-foreground md:right-5 md:bottom-5">
+          <span className="eyebrow absolute bottom-4 left-4 bg-background px-2.5 py-1 text-foreground md:right-5 md:bottom-5 md:left-auto">
             Founder portrait · placeholder
           </span>
         </div>
