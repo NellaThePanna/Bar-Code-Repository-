@@ -26,10 +26,10 @@ const SESSION_KEY = "bar-code-living-intro-seen";
 const FIRST_LINE = "Hi, I'm Arpita Kaur.";
 const SECOND_LINE = "Welcome to Bar Code — where beauty meets reality.";
 
-type SplashStage = "first" | "pause" | "second" | "hold" | "fade" | "done";
+type SplashStage = "checking" | "first" | "pause" | "second" | "hold" | "fade" | "done";
 
 function Index() {
-  const [stage, setStage] = useState<SplashStage>("first");
+  const [stage, setStage] = useState<SplashStage>("checking");
   const [firstCount, setFirstCount] = useState(0);
   const [secondCount, setSecondCount] = useState(0);
   const timers = useRef<Array<ReturnType<typeof setTimeout>>>([]);
@@ -66,6 +66,8 @@ function Index() {
       return clearTimers;
     }
 
+    setStage("first");
+
     const firstDuration = FIRST_LINE.length * 58;
     const secondStart = firstDuration + 600;
     const secondDuration = SECOND_LINE.length * 45;
@@ -93,7 +95,7 @@ function Index() {
         <section
           aria-label="Welcome to Bar Code Living"
           onPointerDown={fadeOut}
-          className={`fixed inset-0 z-50 flex min-h-dvh cursor-default items-center bg-background px-6 transition-opacity duration-700 ease-in-out md:px-14 lg:px-24 ${stage === "fade" ? "pointer-events-none opacity-0" : "opacity-100"}`}
+          className={`fixed inset-0 z-50 flex min-h-dvh cursor-default items-center bg-background px-6 transition-opacity duration-700 ease-in-out md:px-14 lg:px-24 ${stage === "fade" || stage === "checking" ? "pointer-events-none opacity-0" : "opacity-100"}`}
         >
           <h1 className="sr-only">
             {FIRST_LINE} {SECOND_LINE}
@@ -111,6 +113,24 @@ function Index() {
           </div>
         </section>
       )}
+
+      <div className="min-h-screen" aria-hidden="true" />
+      <footer className="bg-burgundy px-5 py-10 text-cream md:px-10">
+        <div className="eyebrow flex flex-col gap-3 border-t border-cream/20 pt-6 opacity-70 md:flex-row md:items-center md:justify-between">
+          <span>Bar Code Living · Dubai, UAE</span>
+          <div className="flex flex-wrap gap-x-8 gap-y-2">
+            <a href="mailto:hello@barcodeliving.com" className="hover:opacity-100">
+              hello@barcodeliving.com
+            </a>
+            <a href="tel:+97140000000" className="hover:opacity-100">
+              +971 4 000 0000
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:opacity-100">
+              @barcodeliving
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
