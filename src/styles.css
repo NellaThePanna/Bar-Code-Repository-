@@ -42,13 +42,15 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-cream: var(--cream);
-  --color-burgundy: var(--burgundy);
-  --font-display: "Playfair Display", "Times New Roman", serif;
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-cream: var(--cream-base);
+  --color-cream-deep: var(--cream-deep);
+  --color-burgundy: var(--burgundy-ink);
+  --color-burgundy-deep: var(--burgundy-deep);
+  --color-burgundy-light: var(--burgundy-light);
+  --font-display: "Bodoni Moda", "Times New Roman", serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
   --font-founder: "Bodoni Moda", "Times New Roman", serif;
   --font-founder-body: "Jost", ui-sans-serif, system-ui, sans-serif;
-  --font-script: "Pinyon Script", cursive;
   --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
@@ -60,38 +62,60 @@
   font-family: var(--font-founder-body);
 }
 
-@utility font-script {
-  font-family: var(--font-script);
-}
-
 @utility photo-grade {
   filter: saturate(0.82) contrast(0.96) sepia(0.08);
 }
 
-/* Brand palette — exact values requested: cream #FEEFDC, burgundy #63343C */
+/* Locked Bar Code Living palette */
 :root {
   --radius: 0.25rem;
-  --cream: #feefdc;
-  --burgundy: #63343c;
-  --background: var(--cream);
-  --foreground: var(--burgundy);
-  --card: var(--cream);
-  --card-foreground: var(--burgundy);
-  --popover: var(--cream);
-  --popover-foreground: var(--burgundy);
-  --primary: var(--burgundy);
-  --primary-foreground: var(--cream);
-  --secondary: color-mix(in oklab, var(--burgundy) 8%, var(--cream));
-  --secondary-foreground: var(--burgundy);
-  --muted: color-mix(in oklab, var(--burgundy) 6%, var(--cream));
-  --muted-foreground: color-mix(in oklab, var(--burgundy) 70%, var(--cream));
-  --accent: var(--burgundy);
-  --accent-foreground: var(--cream);
-  --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: var(--cream);
-  --border: color-mix(in oklab, var(--burgundy) 25%, var(--cream));
-  --input: color-mix(in oklab, var(--burgundy) 25%, var(--cream));
-  --ring: var(--burgundy);
+  --cream-base: #feefdc;
+  --cream-deep: #f5dfc3;
+  --burgundy-ink: #63343c;
+  --burgundy-deep: #4a2530;
+  --burgundy-light: #8c5866;
+  --cream: var(--cream-base);
+  --burgundy: var(--burgundy-ink);
+  --background: var(--cream-base);
+  --foreground: var(--burgundy-ink);
+  --card: var(--cream-deep);
+  --card-foreground: var(--burgundy-deep);
+  --popover: var(--cream-base);
+  --popover-foreground: var(--burgundy-ink);
+  --primary: var(--burgundy-ink);
+  --primary-foreground: var(--cream-base);
+  --secondary: var(--cream-deep);
+  --secondary-foreground: var(--burgundy-deep);
+  --muted: var(--cream-deep);
+  --muted-foreground: var(--burgundy-light);
+  --accent: var(--burgundy-ink);
+  --accent-foreground: var(--cream-base);
+  --destructive: var(--burgundy-deep);
+  --destructive-foreground: var(--cream-base);
+  --border: var(--burgundy-light);
+  --input: var(--burgundy-light);
+  --ring: var(--burgundy-ink);
+}
+
+@keyframes caret-blink {
+  0%, 45% { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
+
+@utility typing-caret {
+  display: inline-block;
+  width: 0.045em;
+  height: 0.82em;
+  margin-left: 0.08em;
+  background: var(--burgundy-ink);
+  animation: caret-blink 850ms steps(1, end) infinite;
+  vertical-align: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-caret {
+    animation: none;
+  }
 }
 
 @layer base {

@@ -1,5 +1,4 @@
 # Roadmap
 
-- [x] Add founder introduction before the existing hero with parallax portrait
-- [x] Add one-time staged room assembly sequence
-- [x] Verify both additions on desktop and mobile
+- [x] Replace the homepage content with the typed founder welcome splash
+- [ ] Verify first-visit, skip, returning-session, reduced-motion, and mobile behavior
