@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import heroLiving from "@/assets/hero-living.jpg";
 import { useEffect, useRef } from "react";
 
 type HomeHeroProps = {
@@ -8,7 +7,7 @@ type HomeHeroProps = {
 
 export function HomeHero({ animate }: HomeHeroProps) {
   const rootRef = useRef<HTMLElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const supportingRef = useRef<HTMLDivElement>(null);
   const hasPlayedRef = useRef(false);
@@ -21,7 +20,12 @@ export function HomeHero({ animate }: HomeHeroProps) {
 
     void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
       ([{ default: gsap }, { ScrollTrigger }]) => {
-        if (!rootRef.current || !imageRef.current || !headlineRef.current || !supportingRef.current) {
+        if (
+          !rootRef.current ||
+          !imageRef.current ||
+          !headlineRef.current ||
+          !supportingRef.current
+        ) {
           return;
         }
 
@@ -63,13 +67,20 @@ export function HomeHero({ animate }: HomeHeroProps) {
   }, [animate]);
 
   return (
-    <section ref={rootRef} aria-labelledby="home-hero-heading" className="sticky top-0 h-svh overflow-hidden bg-burgundy-deep">
-      <img
+    <section
+      ref={rootRef}
+      aria-labelledby="home-hero-heading"
+      className="sticky top-0 h-svh overflow-hidden bg-burgundy-deep"
+    >
+      {/* nova-debt: gradient stands in until real project photography exists */}
+      <div
         ref={imageRef}
-        src={heroLiving}
-        alt="Warm, refined living room interior"
-        className="photo-grade absolute inset-0 h-full w-full object-cover object-center will-change-transform"
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(135deg,var(--cream-deep),var(--burgundy-light))] will-change-transform"
       />
+      <span className="eyebrow absolute top-6 right-6 z-10 text-chalk/70 md:right-12">
+        Photo placeholder
+      </span>
       <div aria-hidden="true" className="absolute inset-0 bg-burgundy-deep/60" />
 
       <div className="relative z-10 flex h-full items-end px-6 pb-[max(4rem,10svh)] md:px-12 lg:px-20">
@@ -81,7 +92,10 @@ export function HomeHero({ animate }: HomeHeroProps) {
           >
             Spaces, Realized.
           </h1>
-          <div ref={supportingRef} className="mt-7 flex flex-col items-start gap-7 md:mt-9 md:gap-8">
+          <div
+            ref={supportingRef}
+            className="mt-7 flex flex-col items-start gap-7 md:mt-9 md:gap-8"
+          >
             <p className="max-w-xl font-founder-body text-base leading-relaxed text-chalk md:text-xl">
               From concept to completion — interior design and fit-out, done right.
             </p>
@@ -90,7 +104,7 @@ export function HomeHero({ animate }: HomeHeroProps) {
               size="lg"
               className="h-12 border border-chalk bg-chalk px-7 font-founder-body text-xs font-semibold uppercase text-burgundy-deep hover:bg-transparent hover:text-chalk"
             >
-              <a href="/our-creations">View Our Work</a>
+              <a href="#our-creations">View Our Work</a>
             </Button>
           </div>
         </div>

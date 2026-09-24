@@ -14,8 +14,18 @@ const pieces = [
   { name: "Wall art", src: art, className: "left-[46%] top-[11%] z-[2] w-[12%]", delay: "190ms" },
   { name: "Sofa", src: sofa, className: "left-[25%] bottom-[10%] z-[3] w-[54%]", delay: "380ms" },
   { name: "Plant", src: plant, className: "left-[8%] bottom-[7%] z-[4] w-[15%]", delay: "570ms" },
-  { name: "Floor lamp", src: lamp, className: "right-[9%] bottom-[8%] z-[4] w-[11%]", delay: "760ms" },
-  { name: "Coffee table", src: table, className: "left-[40%] bottom-[1%] z-[5] w-[22%]", delay: "950ms" },
+  {
+    name: "Floor lamp",
+    src: lamp,
+    className: "right-[9%] bottom-[8%] z-[4] w-[11%]",
+    delay: "760ms",
+  },
+  {
+    name: "Coffee table",
+    src: table,
+    className: "left-[40%] bottom-[1%] z-[5] w-[22%]",
+    delay: "950ms",
+  },
 ];
 
 export function RoomAssembly() {
@@ -27,34 +37,7 @@ export function RoomAssembly() {
         <RevealHeading />
 
         <div ref={ref} className="mt-14 md:mt-20">
-          <div
-            className="relative aspect-video w-full overflow-hidden bg-muted"
-            role="img"
-            aria-label="An empty living room filling with a rug, art, sofa, plant, lamp, and coffee table"
-          >
-            <img
-              src={emptyRoom}
-              alt="Empty warm minimalist living room"
-              loading="lazy"
-              width={1536}
-              height={864}
-              className="photo-grade absolute inset-0 h-full w-full object-cover"
-            />
-            {pieces.map((piece) => (
-              <img
-                key={piece.name}
-                src={piece.src}
-                alt=""
-                aria-hidden
-                loading="lazy"
-                className={cn("assembly-piece absolute h-auto", piece.className, inView && "is-assembled")}
-                style={{ animationDelay: piece.delay }}
-              />
-            ))}
-            <div className="absolute right-3 bottom-3 z-10 bg-background px-3 py-1.5 sm:right-5 sm:bottom-5">
-              <span className="eyebrow">Concept assembly · 01—06</span>
-            </div>
-          </div>
+          <RoomStage placed={inView ? pieces.length : 0} staggered />
 
           <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
             <p className="eyebrow">From empty room to lived-in space</p>
@@ -63,6 +46,43 @@ export function RoomAssembly() {
         </div>
       </div>
     </section>
+  );
+}
+
+export function RoomStage({ placed, staggered = false }: { placed: number; staggered?: boolean }) {
+  return (
+    <div
+      className="relative aspect-video w-full overflow-hidden bg-muted"
+      role="img"
+      aria-label="An empty living room filling with a rug, art, sofa, plant, lamp, and coffee table"
+    >
+      <img
+        src={emptyRoom}
+        alt="Empty warm minimalist living room"
+        loading="lazy"
+        width={1536}
+        height={864}
+        className="photo-grade absolute inset-0 h-full w-full object-cover"
+      />
+      {pieces.map((piece, index) => (
+        <img
+          key={piece.name}
+          src={piece.src}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className={cn(
+            "assembly-piece absolute h-auto",
+            piece.className,
+            index < placed && "is-assembled",
+          )}
+          style={staggered ? { animationDelay: piece.delay } : undefined}
+        />
+      ))}
+      <div className="absolute right-3 bottom-3 z-10 bg-background px-3 py-1.5 sm:right-5 sm:bottom-5">
+        <span className="eyebrow">Pieces placed · 0{placed} / 06</span>
+      </div>
+    </div>
   );
 }
 

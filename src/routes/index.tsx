@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { ClosingCta } from "@/components/ClosingCta";
 import { HomeHero } from "@/components/HomeHero";
+import { OurCreations } from "@/components/OurCreations";
+import { ProcessSection } from "@/components/ProcessSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -79,9 +82,7 @@ function Index() {
     timers.current.push(setTimeout(() => setStage("pause"), firstDuration));
     timers.current.push(setTimeout(() => setStage("second"), secondStart));
     for (let index = 1; index <= SECOND_LINE.length; index += 1) {
-      timers.current.push(
-        setTimeout(() => setSecondCount(index), secondStart + index * 45),
-      );
+      timers.current.push(setTimeout(() => setSecondCount(index), secondStart + index * 45));
     }
     timers.current.push(setTimeout(() => setStage("hold"), secondStart + secondDuration));
     timers.current.push(setTimeout(() => setStage("fade"), secondStart + secondDuration + 700));
@@ -115,7 +116,14 @@ function Index() {
         </section>
       )}
 
-      <HomeHero animate={stage === "done"} />
+      <div className="relative">
+        <HomeHero animate={stage === "done"} />
+        <div className="relative z-10">
+          <OurCreations />
+          <ProcessSection />
+          <ClosingCta />
+        </div>
+      </div>
       <footer className="relative z-10 bg-burgundy px-5 py-10 text-cream md:px-10">
         <div className="eyebrow flex flex-col gap-3 border-t border-cream/20 pt-6 opacity-70 md:flex-row md:items-center md:justify-between">
           <span>Bar Code Living · Dubai, UAE</span>
@@ -126,7 +134,12 @@ function Index() {
             <a href="tel:+97140000000" className="hover:opacity-100">
               +971 4 000 0000
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:opacity-100">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:opacity-100"
+            >
               @barcodeliving
             </a>
           </div>
