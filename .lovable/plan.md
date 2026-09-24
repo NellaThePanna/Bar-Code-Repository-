@@ -8,8 +8,8 @@
 ## Build
 1. Add the `--chalk` color token and expose it as the semantic Chalk utility, reserved for foregrounds and fine lines on dark/photo surfaces.
 2. Add a full-height (`100svh`) sticky hero using the existing warm interior photograph, the established photo treatment, and a burgundy-deep overlay.
-3. Set the overlaid “BAR CODE LIVING” headline in Bodoni Moda and Chalk, with responsive sizing and safe placement across desktop and mobile.
-4. Connect the splash completion event to a one-time GSAP timeline: photo scale 110% → 100%, then headline rise/fade. Do not add scroll-linked image movement or a second entrance.
+3. Set “Spaces, Realized.” in Bodoni Moda and Chalk, followed by the supplied Jost subtext and a clearly legible Chalk/burgundy “View Our Work” CTA.
+4. Connect the splash completion event to a one-time GSAP timeline: photo scale 110% → 100%, then headline rise/fade, followed by the subtext and CTA. Do not add scroll-linked image movement or a second entrance.
 5. Register ScrollTrigger for the hero animation approach while retaining CSS sticky positioning for the pin.
 6. Correct any body-size burgundy-light text found on cream-deep surfaces by using burgundy-ink instead.
 
@@ -18,4 +18,4 @@
 - Check desktop and mobile framing, sticky release behavior, animation timing, and browser errors.
 
 ## Assumption
-- No hero subtext or CTA copy was supplied, so this step includes only the brand headline over the photograph rather than inventing messaging.
+- The CTA destination is `/our-creations`, matching the page name supplied. The current checkout contains no such route, so this step will not create or alter that page; the link will become active when that existing page is restored to this checkout.
