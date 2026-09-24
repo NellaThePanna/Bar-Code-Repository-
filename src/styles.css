@@ -47,6 +47,7 @@
   --color-burgundy: var(--burgundy-ink);
   --color-burgundy-deep: var(--burgundy-deep);
   --color-burgundy-light: var(--burgundy-light);
+  --color-chalk: var(--chalk);
   --font-display: "Bodoni Moda", "Times New Roman", serif;
   --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
   --font-founder: "Bodoni Moda", "Times New Roman", serif;
@@ -74,6 +75,7 @@
   --burgundy-ink: #63343c;
   --burgundy-deep: #4a2530;
   --burgundy-light: #8c5866;
+  --chalk: #faf7f2;
   --cream: var(--cream-base);
   --burgundy: var(--burgundy-ink);
   --background: var(--cream-base);
@@ -87,7 +89,7 @@
   --secondary: var(--cream-deep);
   --secondary-foreground: var(--burgundy-deep);
   --muted: var(--cream-deep);
-  --muted-foreground: var(--burgundy-light);
+  --muted-foreground: var(--burgundy-ink);
   --accent: var(--burgundy-ink);
   --accent-foreground: var(--cream-base);
   --destructive: var(--burgundy-deep);

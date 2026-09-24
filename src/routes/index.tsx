@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { HomeHero } from "@/components/HomeHero";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,8 +115,8 @@ function Index() {
         </section>
       )}
 
-      <div className="min-h-screen" aria-hidden="true" />
-      <footer className="bg-burgundy px-5 py-10 text-cream md:px-10">
+      <HomeHero animate={stage === "done"} />
+      <footer className="relative z-10 bg-burgundy px-5 py-10 text-cream md:px-10">
         <div className="eyebrow flex flex-col gap-3 border-t border-cream/20 pt-6 opacity-70 md:flex-row md:items-center md:justify-between">
           <span>Bar Code Living · Dubai, UAE</span>
           <div className="flex flex-wrap gap-x-8 gap-y-2">
