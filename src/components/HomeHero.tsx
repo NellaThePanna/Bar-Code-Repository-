@@ -17,7 +17,7 @@ export function HomeHero({ animate }: HomeHeroProps) {
     if (!animate || hasPlayedRef.current) return;
 
     hasPlayedRef.current = true;
-    let cleanup = () => undefined;
+    let cleanup: () => void = () => undefined;
 
     void Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
       ([{ default: gsap }, { ScrollTrigger }]) => {
