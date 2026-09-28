@@ -1,0 +1,101 @@
+/* Scoped to .ora-ref so the direction's type and motifs never touch the site @theme. */
+.ora-ref {
+  --ora-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+
+/* Joins Tailwind's base layer so utilities still win; undoes the site body/border defaults. */
+@layer base {
+  .ora-ref {
+    line-height: 1.5;
+  }
+
+  .ora-ref *,
+  .ora-ref *::before,
+  .ora-ref *::after {
+    border-color: currentColor;
+  }
+}
+
+.ora-ref .ora-mono {
+  font-family: var(--ora-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ora-ref .ora-cap {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ora-ref .ora-disp {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.ora-ref .ora-disp em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Monogram-frame motif: offset 1px frame whose bottom rule overshoots to the right. */
+.ora-ref .ora-framed {
+  position: relative;
+  margin: 14px 14px 0 0;
+}
+.ora-ref .ora-framed::before {
+  content: "";
+  position: absolute;
+  inset: -14px -14px 14px 14px;
+  border: 1px solid var(--burgundy-ink);
+  pointer-events: none;
+}
+.ora-ref .ora-framed::after {
+  content: "";
+  position: absolute;
+  right: -46px;
+  bottom: 14px;
+  width: 34px;
+  height: 1px;
+  background: var(--burgundy-ink);
+}
+.ora-ref .ora-framed > * {
+  position: relative;
+  z-index: 1;
+}
+.ora-ref .on-dark .ora-framed::before {
+  border-color: rgb(245 223 195 / 0.55);
+}
+.ora-ref .on-dark .ora-framed::after {
+  background: rgb(245 223 195 / 0.55);
+}
+/* Mobile gutter is 24px, so the overshoot is shortened to stay inside the viewport. */
+@media (max-width: 1023px) {
+  .ora-ref .ora-framed::after {
+    right: -30px;
+    width: 18px;
+  }
+}
+
+.ora-ref .ora-slats {
+  background: linear-gradient(
+    90deg,
+    var(--burgundy-deep) 0 14px,
+    color-mix(in srgb, var(--burgundy-deep) 70%, black) 14px 18px
+  );
+  background-size: 18px 100%;
+}
+
+/* Focus ring follows the surface: .on-light is declared after .on-dark so white cards inside dark sections win. */
+.ora-ref :is(a, button, input, select):focus-visible {
+  outline: 2px solid var(--burgundy-ink);
+  outline-offset: 3px;
+}
+.ora-ref .on-dark :is(a, button, input, select):focus-visible {
+  outline-color: var(--cream-deep);
+}
+.ora-ref .on-light :is(a, button, input, select):focus-visible {
+  outline-color: var(--burgundy-ink);
+}
