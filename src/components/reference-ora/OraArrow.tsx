@@ -1,6 +1,5 @@
 const PATHS = {
   right: "M2 8h12M9 3l5 5-5 5",
-  "up-right": "M4 12L12 4M5 4h7v7",
   down: "M3 6l5 5 5-5",
 };
 

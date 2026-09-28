@@ -1,4 +1,3 @@
-import { OraArrow } from "./OraArrow";
 import { OraPlate } from "./OraPlate";
 
 const CAFE_TABLE =
@@ -39,13 +38,7 @@ export function OraCommercial() {
                   [Project name — TBD]
                 </h3>
               </div>
-              <a
-                href="#client-project-tbd"
-                className="inline-flex items-center gap-2.5 pb-1.5 border-b border-current ora-cap hover:text-(--burgundy-deep) transition-colors"
-              >
-                View project
-                <OraArrow dir="up-right" />
-              </a>
+              <span className="ora-cap">View project</span>
             </div>
             <p className="py-[22px] text-sm leading-[1.6] text-(--burgundy-light)">[Project narrative — TBD]</p>
             <div className="mt-auto grid sm:grid-cols-2 gap-6">
@@ -69,11 +62,8 @@ export function OraCommercial() {
           </div>
 
           <div className="on-light bg-white text-(--burgundy-ink) p-6 sm:p-10 flex flex-col">
-            <div className="pb-[22px] flex items-end justify-between gap-4 border-b border-(--burgundy-ink)/18">
+            <div className="pb-[22px] border-b border-(--burgundy-ink)/18">
               <h4 className="font-display font-medium text-[26px] leading-tight">Semi-private areas</h4>
-              <a aria-label="Semi-private areas" href="#zones" className="hover:text-(--burgundy-deep) transition-colors">
-                <OraArrow dir="up-right" />
-              </a>
             </div>
             <p className="py-[22px] text-sm leading-[1.6] text-(--burgundy-light)">
               Layout guides movement naturally without harsh partitions.

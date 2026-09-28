@@ -1,5 +1,3 @@
-import { OraArrow } from "./OraArrow";
-
 const SERVICES = [
   {
     title: "Interior design",
@@ -35,10 +33,7 @@ export function OraServices() {
               <span className="font-display text-[64px] leading-none">0{i + 1}</span>
               <h3 className="mt-12 mb-3 font-display font-medium text-[30px] leading-tight">{s.title}</h3>
               <p className="text-sm leading-[1.65] text-(--burgundy-light)">{s.text}</p>
-              <div className="mt-auto pt-5 flex items-center justify-between gap-4 border-t border-(--burgundy-ink)/18 ora-cap">
-                <span>{s.foot}</span>
-                <OraArrow />
-              </div>
+              <p className="mt-auto pt-5 border-t border-(--burgundy-ink)/18 ora-cap">{s.foot}</p>
             </li>
           ))}
         </ul>
