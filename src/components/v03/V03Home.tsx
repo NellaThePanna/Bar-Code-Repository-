@@ -12,21 +12,19 @@ import oliveTree from "@/assets/opening/olive-tree.webp";
 import artwork from "@/assets/opening/artwork.webp";
 import mistBack from "@/assets/opening/mist-back.webp";
 import mistFront from "@/assets/opening/mist-front.webp";
-import monoCream from "@/assets/v03/logo-monogram-cream.webp";
-import monoBurgundy from "@/assets/v03/logo-monogram-burgundy.webp";
+import { Link } from "@tanstack/react-router";
 import { FounderIntro } from "./FounderIntro";
+import { CropMarks, V03Contact, V03Footer, V03Header } from "./V03Chrome";
 import phSunsetWindow from "@/assets/v03/ph-sunset-window.webp";
 import phEmpty from "@/assets/v03/ph-empty.webp";
 import phSunsetDoor from "@/assets/v03/ph-sunset-door.webp";
-import phLiving from "@/assets/v03/ph-living.webp";
-import phSunsetSofa from "@/assets/v03/ph-sunset-sofa.webp";
-import phEmptyWindow from "@/assets/v03/ph-empty-window.webp";
+import imperialLivingDining from "@/assets/v03/projects/imperial-avenue-living-dining.webp";
+import bldCrescentBedroom from "@/assets/v03/projects/bld-crescent-bedroom.webp";
+import beachMansionLiving from "@/assets/v03/projects/beach-mansion-1408-living.webp";
 import matArt from "@/assets/v03/mat-art.webp";
 import matRug from "@/assets/v03/mat-rug.webp";
 import matTable from "@/assets/v03/mat-table.webp";
 import matLamp from "@/assets/v03/mat-lamp.webp";
-import matSofa from "@/assets/v03/mat-sofa.webp";
-import matPlant from "@/assets/v03/mat-plant.webp";
 
 type Key = keyof typeof POS;
 
@@ -74,17 +72,6 @@ const seg = (p: number, a: number, b: number) => clamp((p - a) / (b - a));
 const io = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const out = (t: number) => 1 - Math.pow(1 - t, 3);
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-
-function CropMarks() {
-  return (
-    <>
-      <span className="cm tl" />
-      <span className="cm tr" />
-      <span className="cm bl" />
-      <span className="cm br" />
-    </>
-  );
-}
 
 export function V03Home() {
   useEffect(() => {
@@ -250,24 +237,7 @@ export function V03Home() {
         Skip to content
       </a>
 
-      <header id="hdr" className="hdr">
-        <a className="hdr-brand" href="#top" aria-label="BARCODE Living, home">
-          <img className="mono mono-light" src={monoCream} alt="" />
-          <img className="mono mono-dark" src={monoBurgundy} alt="" />
-        </a>
-        <nav className="hdr-nav cap" aria-label="Main">
-          <a href="#story">Story</a>
-          <a href="#services">Services</a>
-          <a href="#work">Projects</a>
-          <a href="#process">Interior</a>
-        </nav>
-        <a className="hdr-talk cap" href="#contact">
-          <span>Talk to us</span>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
-            <path d="M3.5 2h2.6l1.3 3.2-1.6 1.1a8 8 0 0 0 3.9 3.9l1.1-1.6L14 9.9v2.6A1.5 1.5 0 0 1 12.5 14 10.5 10.5 0 0 1 2 3.5 1.5 1.5 0 0 1 3.5 2z" />
-          </svg>
-        </a>
-      </header>
+      <V03Header />
 
       <main id="main">
         <section id="top" className="opening" data-header="dark" aria-label="Opening">
@@ -498,165 +468,40 @@ export function V03Home() {
                     Selected work
                   </h2>
                 </div>
-                <span className="meta right">Project archive · [Years TBD]</span>
               </div>
               <div className="cards3">
                 <article className="card work">
                   <div className="ph r34">
-                    <img src={phLiving} alt="Placeholder photo: warm living room with a travertine coffee table" loading="lazy" />
+                    <img src={imperialLivingDining} alt="Living and dining room at Imperial Avenue by Barcode Living" loading="lazy" />
                   </div>
-                  <span className="fig mono">Fig. 07 · Placeholder</span>
-                  <h3 className="h-work">[Project name — TBD]</h3>
-                  <span className="mono loc">Location: [TBD] · Type: [Apartment / Holiday home / Short-stay]</span>
-                  <p>[Project description — TBD]</p>
-                  <a className="tlink cap" href="#contact">
+                  <span className="fig mono">Fig. 07</span>
+                  <h3 className="h-work">Imperial Avenue</h3>
+                  <Link className="tlink cap" to="/reference-ora/projects/$slug" params={{ slug: "imperial-avenue" }}>
                     View project <span aria-hidden="true">→</span>
-                  </a>
+                  </Link>
                 </article>
                 <article className="card work">
                   <div className="ph r34">
-                    <img src={phSunsetSofa} alt="Placeholder photo: sectional sofa in front of a skyline window" loading="lazy" />
+                    <img src={bldCrescentBedroom} alt="Bedroom at BLD Crescent by Barcode Living" loading="lazy" />
                   </div>
-                  <span className="fig mono">Fig. 08 · Placeholder</span>
-                  <h3 className="h-work">[Project name — TBD]</h3>
-                  <span className="mono loc">Location: [TBD] · Type: [TBD]</span>
-                  <p>[Project description — TBD]</p>
-                  <a className="tlink cap" href="#contact">
-                    View project <span aria-hidden="true">→</span>
-                  </a>
+                  <span className="fig mono">Fig. 08</span>
+                  <h3 className="h-work">BLD Crescent</h3>
                 </article>
                 <article className="card work">
                   <div className="ph r34">
-                    <img src={phEmptyWindow} alt="Placeholder photo: floor-to-ceiling window in an empty apartment" loading="lazy" />
+                    <img src={beachMansionLiving} alt="Living room at Beach Mansion 1408 by Barcode Living" loading="lazy" />
                   </div>
-                  <span className="fig mono">Fig. 09 · Placeholder</span>
-                  <h3 className="h-work">[Project name — TBD]</h3>
-                  <span className="mono loc">Location: [TBD] · Type: [TBD]</span>
-                  <p>[Project description — TBD]</p>
-                  <a className="tlink cap" href="#contact">
-                    View project <span aria-hidden="true">→</span>
-                  </a>
+                  <span className="fig mono">Fig. 09</span>
+                  <h3 className="h-work">Beach Mansion 1408</h3>
                 </article>
               </div>
             </div>
           </section>
 
-          <section className="wrap band-wrap" aria-label="Statement">
-            <div className="band">
-              <div className="band-frame" aria-hidden="true" />
-              <div className="band-meta mono">
-                <span>06 · The studio</span>
-                <span>BARCODE Living</span>
-              </div>
-              <p className="band-text">
-                <span>Elevated,</span>
-                <span className="i1">but never</span>
-                <span className="i2">
-                  <em>staged.</em>
-                </span>
-              </p>
-              <div className="band-meta mono bottom">
-                <span>Apartments · Holiday homes · Short-stay</span>
-                <span>Dubai</span>
-              </div>
-            </div>
-          </section>
-
-          <section id="contact" className="wrap" aria-labelledby="close-h">
-            <div className="sheet closing">
-              <CropMarks />
-              <div className="sheet-head thin">
-                <span className="meta">07 · Talk to us</span>
-                <span className="meta right">Enquiries</span>
-              </div>
-              <figure className="pin p1">
-                <img src={matSofa} alt="" loading="lazy" />
-                <figcaption className="mono">Ref. 01 · Placeholder</figcaption>
-              </figure>
-              <figure className="pin p2">
-                <img src={matPlant} alt="" loading="lazy" />
-                <figcaption className="mono">Ref. 02 · Placeholder</figcaption>
-              </figure>
-              <figure className="pin p3">
-                <img src={matTable} alt="" loading="lazy" />
-                <figcaption className="mono">Ref. 03 · Placeholder</figcaption>
-              </figure>
-              <figure className="pin p4">
-                <img src={matLamp} alt="" loading="lazy" />
-                <figcaption className="mono">Ref. 04 · Placeholder</figcaption>
-              </figure>
-              <div className="close-core">
-                <span className="meta">Apartments · holiday homes · short-stay properties</span>
-                <h2 id="close-h" className="h-close">
-                  Let's shape
-                  <br />
-                  your <em>space.</em>
-                </h2>
-                <a className="btn" href="#contact">
-                  Start a project <span aria-hidden="true">→</span>
-                </a>
-                <span className="mono note">[Contact form / WhatsApp / email — TBD]</span>
-              </div>
-              <div className="sheet-foot mono">
-                <span>[Response time — TBD]</span>
-                <span>Dubai</span>
-              </div>
-            </div>
-          </section>
+          <V03Contact />
         </div>
 
-        <footer className="foot" data-header="dark">
-          <div className="foot-top">
-            <div className="foot-brand">
-              <img src={monoCream} alt="BARCODE Living" className="foot-mono" />
-              <p className="foot-word">
-                BARCODE <span>Living</span>
-              </p>
-              <p className="foot-line">
-                We design apartments, holiday homes and short-stay properties with a fashion eye and a designer's
-                discipline.
-              </p>
-            </div>
-            <div className="foot-cols">
-              <div>
-                <span className="mono foot-h">Studio</span>
-                <a href="#story">Story</a>
-                <a href="#services">Services</a>
-                <a href="#work">Projects</a>
-                <a href="#process">Process</a>
-              </div>
-              <div>
-                <span className="mono foot-h">Contact</span>
-                <span>[Address — TBD]</span>
-                <span>[Email — TBD]</span>
-                <span>[Phone — TBD]</span>
-              </div>
-              <div>
-                <span className="mono foot-h">Social</span>
-                <span>[Instagram — TBD]</span>
-                <span>[LinkedIn — TBD]</span>
-              </div>
-            </div>
-          </div>
-          <div className="foot-bottom">
-            <span className="mono">© 2026 BARCODE Living · [Legal entity name — TBD]</span>
-            <table className="title-block mono" aria-hidden="true">
-              <tbody>
-                <tr>
-                  <td>
-                    <b>BARCODE Living</b>
-                  </td>
-                  <td>Sheet 01 / 01</td>
-                  <td>Scale 1:1</td>
-                </tr>
-                <tr>
-                  <td colSpan={2}>Location: Dubai, UAE</td>
-                  <td>Homepage v0.3</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </footer>
+        <V03Footer />
       </main>
     </div>
   );

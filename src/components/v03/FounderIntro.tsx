@@ -1,6 +1,6 @@
 import portrait from "@/assets/v03/arpita-kaur.webp";
-import interiorDetail from "@/assets/v03/interior-detail-stitch.webp";
-import materialDetail from "@/assets/v03/material-detail-stitch.webp";
+import bldArt from "@/assets/v03/projects/bld-crescent-art-cushions.webp";
+import imperialArtworks from "@/assets/v03/projects/imperial-avenue-artworks.webp";
 
 const BADGES = ["Founder, Barcode Living", "Apartments, holiday homes & short-stay", "Interiors with a fashion eye"];
 
@@ -103,22 +103,22 @@ export function FounderIntro() {
             <figure className="fi-polaroid">
               <div className="fi-polaroid-img fi-r34">
                 <img
-                  src={interiorDetail}
-                  alt="Placeholder photo: ribbed travertine wall panel beside a timber-lined doorway"
+                  src={bldArt}
+                  alt="Red maze artwork above burgundy cushions in a bedroom at BLD Crescent by Barcode Living"
                   loading="lazy"
                 />
               </div>
-              <figcaption className="fi-cap">Fig. 02 · Interior detail · Placeholder</figcaption>
+              <figcaption className="fi-cap">Fig. 02 · BLD Crescent</figcaption>
             </figure>
             <figure className="fi-polaroid fi-polaroid-2">
               <div className="fi-polaroid-img fi-r11">
                 <img
-                  src={materialDetail}
-                  alt="Placeholder photo: bouclé fabric swatch on fluted walnut and veined marble"
+                  src={imperialArtworks}
+                  alt="Two framed abstract artworks on an orange wall at Imperial Avenue by Barcode Living"
                   loading="lazy"
                 />
               </div>
-              <figcaption className="fi-cap">Fig. 03 · Material detail · Placeholder</figcaption>
+              <figcaption className="fi-cap">Fig. 03 · Imperial Avenue</figcaption>
             </figure>
           </div>
         </div>
