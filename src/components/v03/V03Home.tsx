@@ -476,7 +476,7 @@ export function V03Home() {
                   </div>
                   <span className="fig mono">Fig. 07</span>
                   <h3 className="h-work">Imperial Avenue</h3>
-                  <Link className="tlink cap" to="/reference-ora/projects/$slug" params={{ slug: "imperial-avenue" }}>
+                  <Link className="tlink cap" to="/projects/$slug" params={{ slug: "imperial-avenue" }}>
                     View project <span aria-hidden="true">→</span>
                   </Link>
                 </article>

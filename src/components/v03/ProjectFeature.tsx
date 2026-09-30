@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { V03Contact, V03Footer, V03Header } from "./V03Chrome";
 import type { Project } from "./projects";
 
-const HOME = "/reference-ora";
+const HOME = "/";
 
 export function ProjectFeature({ project }: { project: Project }) {
   const { approach, highlight } = project;
