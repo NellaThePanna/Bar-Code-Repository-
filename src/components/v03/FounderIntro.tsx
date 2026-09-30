@@ -2,7 +2,7 @@ import portrait from "@/assets/v03/founder-portrait-stitch.webp";
 import interiorDetail from "@/assets/v03/interior-detail-stitch.webp";
 import materialDetail from "@/assets/v03/material-detail-stitch.webp";
 
-const BADGES = ["Founder, Barcode Living", "Founder, House of Mitti", "Interiors with a fashion eye"];
+const BADGES = ["Founder, Barcode Living", "Apartments, holiday homes & short-stay", "Interiors with a fashion eye"];
 
 function Arrow({ className, d }: { className: string; d: [string, string] }) {
   return (
@@ -21,7 +21,7 @@ export function FounderIntro() {
           <h2 id="fi-h" className="fi-display">
             Hello, <span className="fi-im">i&rsquo;m</span> Arpita
           </h2>
-          <p className="fi-sub">Founder of Barcode Living &amp; House of Mitti</p>
+          <p className="fi-sub">Founder, Barcode Living</p>
         </div>
 
         <div className="fi-stage">
@@ -31,7 +31,7 @@ export function FounderIntro() {
               <Arrow className="fi-arrow-l1" d={["M4 14 C 28 8, 48 16, 56 34", "M48 30 L 56 34 L 54 26"]} />
             </div>
             <div className="fi-note fi-note-2">
-              <p>Founder, House of Mitti</p>
+              <p>Apartments, holiday homes &amp; short-stay</p>
               <Arrow className="fi-arrow-l2" d={["M6 38 C 24 40, 44 32, 54 12", "M46 16 L 54 12 L 56 20"]} />
             </div>
           </div>
@@ -93,7 +93,7 @@ export function FounderIntro() {
               <p className="fi-sig" aria-hidden="true">
                 Arpita Kaur
               </p>
-              <p className="fi-sub fi-sig-title">Founder, Barcode Living &amp; House of Mitti</p>
+              <p className="fi-sub fi-sig-title">Founder, Barcode Living</p>
             </div>
             <div className="fi-bio-cta">
               <a className="fi-btn" href="#contact">
