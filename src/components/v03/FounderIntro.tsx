@@ -1,4 +1,4 @@
-import portrait from "@/assets/v03/founder-portrait-stitch.webp";
+import portrait from "@/assets/v03/arpita-kaur.webp";
 import interiorDetail from "@/assets/v03/interior-detail-stitch.webp";
 import materialDetail from "@/assets/v03/material-detail-stitch.webp";
 
@@ -38,12 +38,9 @@ export function FounderIntro() {
 
           <figure className="fi-portrait">
             <div className="fi-portrait-img">
-              <img
-                src={portrait}
-                alt="Placeholder photo: a woman in a burgundy blazer at a desk in a bright studio (the founder's real portrait is to come)"
-              />
+              <img src={portrait} alt="Arpita Kaur, founder of Barcode Living" />
             </div>
-            <figcaption className="fi-cap">Fig. 01 · Founder portrait · Placeholder</figcaption>
+            <figcaption className="fi-cap">Fig. 01 · Arpita Kaur, founder</figcaption>
           </figure>
 
           <div className="fi-notes fi-notes-right">
