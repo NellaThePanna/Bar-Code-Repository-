@@ -14,7 +14,7 @@ import mistBack from "@/assets/opening/mist-back.webp";
 import mistFront from "@/assets/opening/mist-front.webp";
 import monoCream from "@/assets/v03/logo-monogram-cream.webp";
 import monoBurgundy from "@/assets/v03/logo-monogram-burgundy.webp";
-import founderImg from "@/assets/v03/founder-placeholder.webp";
+import { FounderIntro } from "./FounderIntro";
 import phSunsetWindow from "@/assets/v03/ph-sunset-window.webp";
 import phEmpty from "@/assets/v03/ph-empty.webp";
 import phSunsetDoor from "@/assets/v03/ph-sunset-door.webp";
@@ -229,11 +229,6 @@ export function V03Home() {
       if (theme === "dark" && r.top <= 0 && r.bottom > 42 && p > 0.88) theme = "clear";
       hdr.classList.toggle("light", theme === "light");
       hdr.classList.toggle("clear", theme === "clear");
-
-      // founder photo parallax
-      const fimg = $("fimg");
-      const fr = (fimg.parentElement as HTMLElement).getBoundingClientRect();
-      fimg.style.transform = `translateY(${(clamp((vh - fr.top) / (vh + fr.height)) - 0.5) * -10}%)`;
     }
 
     const trigger = ScrollTrigger.create({ start: 0, end: "max", onUpdate: frame, onRefresh: frame });
@@ -354,33 +349,7 @@ export function V03Home() {
           </div>
         </section>
 
-        <section id="founder" className="founder" data-header="dark" aria-labelledby="founder-h">
-          <div>
-            <span className="cap eyebrow">02 · The founder</span>
-            <h2 id="founder-h">Arpita Kaur</h2>
-            <div className="role">Founder of Barcode Living &amp; House Of Mitti</div>
-            <p className="bio">
-              I design interiors that make you look twice. I come at it with a fashion eye: good proportions, great
-              textures, one statement piece that owns the room. And I know when to stop.
-            </p>
-            <p className="bio">
-              Most spaces don't need more. They need the one thing that's missing. Finding it is where the fun starts.
-            </p>
-            <p className="bio">Behind me is a team that makes it happen, from the first mood board to the final styling.</p>
-            <div className="sig" aria-hidden="true">
-              Arpita Kaur.
-            </div>
-          </div>
-          <figure className="founder-photo">
-            <div className="frame">
-              <img id="fimg" src={founderImg} alt="Placeholder photo: founder portrait (real photo to come)" />
-            </div>
-            <figcaption className="fplate">
-              <span>Fig. 02 · Founder portrait</span>
-              <span>Placeholder</span>
-            </figcaption>
-          </figure>
-        </section>
+        <FounderIntro />
 
         <div className="body-chalk" data-header="light">
           <div className="draft-grid" aria-hidden="true">

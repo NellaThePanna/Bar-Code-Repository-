@@ -218,3 +218,54 @@ html:has(.v03),html:has(.v03) body{background:#4A2530;scroll-behavior:auto}
 @media (prefers-reduced-motion: reduce){.v03 .opening{height:auto}
 .v03 .stage{position:relative}
 .v03 *{transition:none!important}}
+.v03 .fi{--fi-pad:clamp(20px,5vw,72px);--fi-line:rgba(140,88,102,.2);background:var(--chalk);color:var(--deep)}
+.v03 .fi-hero{position:relative;max-width:1440px;margin:0 auto;padding:48px var(--fi-pad) 96px;overflow:hidden}
+.v03 .fi-title{text-align:center;padding-top:16px}
+.v03 .fi-display{font-family:var(--serif);font-weight:400;font-size:clamp(2.5rem,10vw,5rem);line-height:1;letter-spacing:-.05em;text-transform:uppercase;color:var(--ink);text-wrap:balance}
+.v03 .fi-im{display:inline-block;padding-right:.1em;font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.1em;letter-spacing:normal;text-transform:none}
+.v03 .fi-sub{margin-top:16px;font-family:var(--sans);font-weight:500;font-size:.8125rem;line-height:1.25rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
+.v03 .fi-stage{position:relative;margin-top:40px;display:flex;align-items:center;justify-content:center}
+.v03 .fi-notes{display:none;position:absolute;z-index:20;flex-direction:column}
+.v03 .fi-notes-left{left:24px;top:32px;gap:96px;max-width:240px}
+.v03 .fi-notes-right{right:24px;top:48px;gap:80px;max-width:260px}
+.v03 .fi-note{position:relative}
+.v03 .fi-notes-left .fi-note{text-align:right;padding-right:24px}
+.v03 .fi-notes-left .fi-note-2{margin-top:32px}
+.v03 .fi-notes-right .fi-note p{padding-left:16px}
+.v03 .fi-note p{font-family:var(--sans);font-weight:500;font-size:.9375rem;line-height:1.25;letter-spacing:.01em;color:var(--deep)}
+.v03 .fi-arrow{position:absolute;width:64px;height:48px;color:var(--ink);pointer-events:none}
+.v03 .fi-arrow-l1{right:-48px;top:8px}
+.v03 .fi-arrow-l2{right:-48px;top:-8px}
+.v03 .fi-arrow-r1{left:-56px;top:8px}
+.v03 .fi-cta{padding:16px 0 0 16px}
+.v03 .fi-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;height:44px;padding:0 32px;background:var(--ink);color:var(--beige);font-family:var(--sans);font-weight:500;font-size:.8125rem;line-height:1.25rem;letter-spacing:.15em;text-transform:uppercase;transition:background-color .2s}
+.v03 .fi-btn:hover{background:var(--deep)}
+.v03 .fi-portrait{position:relative;z-index:10;width:100%;max-width:440px;aspect-ratio:3/4;padding:8px;background:var(--chalk)}
+.v03 .fi-portrait-img{width:100%;height:100%;overflow:hidden;background:rgba(99,52,60,.05)}
+.v03 .fi-portrait-img img,.v03 .fi-polaroid-img img{width:100%;height:100%;object-fit:cover}
+.v03 .fi-cap{margin-top:8px;padding:0 4px;font-family:var(--sans);font-weight:500;font-size:11px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.v03 .fi-badges{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;padding-top:16px;border-top:1px solid var(--fi-line)}
+.v03 .fi-badge{padding:12px;border:1px solid var(--fi-line);background:var(--chalk);font-family:var(--sans);font-weight:400;font-size:.9375rem;line-height:1.5rem;letter-spacing:.01em;color:var(--deep)}
+.v03 .fi-badge:nth-child(3){grid-column:1/-1}
+.v03 .fi-btn-block{grid-column:1/-1;width:100%;margin-top:8px;padding:0 24px}
+@media (min-width:1024px){.v03 .fi-stage{min-height:580px}.v03 .fi-notes{display:flex}.v03 .fi-badges{display:none}}
+.v03 .fi-bio{background:var(--chalk);border-top:1px solid var(--fi-line);padding:96px 0}
+.v03 .fi-bio-grid{max-width:1440px;margin:0 auto;padding:0 var(--fi-pad);display:flex;flex-direction:column}
+.v03 .fi-bio-copy,.v03 .fi-polaroids{grid-column:span 12}
+.v03 .fi-kicker{display:flex;align-items:center;gap:12px;margin-bottom:24px;font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1;color:var(--ink)}
+.v03 .fi-rule{width:32px;height:1px;background:var(--ink)}
+.v03 .fi-h{margin-bottom:32px;font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.2vw,2.75rem);line-height:1.1;letter-spacing:-.025em;color:var(--deep);text-wrap:balance}
+.v03 .fi-paras{font-family:var(--sans);font-weight:400;font-size:1.0625rem;line-height:1.625;letter-spacing:.01em;color:var(--deep)}
+.v03 .fi-paras p+p{margin-top:24px}
+.v03 .fi-sign{margin-top:48px;padding-top:32px;border-top:1px solid var(--fi-line)}
+.v03 .fi-sig{font-family:var(--script);font-size:2.75rem;line-height:1;letter-spacing:.025em;color:var(--ink)}
+.v03 .fi-sig-title{margin-top:8px;letter-spacing:.2em}
+.v03 .fi-bio-cta{margin-top:40px}
+.v03 .fi-polaroids{margin-top:48px;display:flex;flex-direction:column;gap:32px;align-items:flex-start}
+.v03 .fi-polaroid{width:100%;padding:12px;border:1px solid rgba(140,88,102,.25);background:var(--chalk)}
+.v03 .fi-polaroid-img{width:100%;overflow:hidden;background:rgba(99,52,60,.05)}
+.v03 .fi-r34{aspect-ratio:3/4}
+.v03 .fi-r11{aspect-ratio:1}
+.v03 .fi-polaroid .fi-cap{margin-top:0;padding:16px 4px 4px;letter-spacing:.05em}
+@media (min-width:640px){.v03 .fi-polaroids{flex-direction:row}.v03 .fi-polaroid{flex:0 1 50%}.v03 .fi-polaroid-2{margin-top:64px}}
+@media (min-width:1024px){.v03 .fi-bio-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem;align-items:start}.v03 .fi-bio-copy{grid-column:span 6;padding-right:48px}.v03 .fi-polaroids{grid-column:span 6;margin-top:0}}
